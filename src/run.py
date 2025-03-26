@@ -1,7 +1,6 @@
 from main import CakeShopChatbot
 
 def main():
-    # Inisialisasi chatbot
     chatbot = CakeShopChatbot()
     
     print("=== Selamat Datang di Toko Kue Chat Bot ===")

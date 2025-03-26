@@ -56,6 +56,54 @@
             "responses": [
                 "Kami memiliki ukuran S (15cm), M (20cm), dan L (25cm). Ukuran mana yang Anda inginkan?"
             ]
+        },
+        {
+            "tag": "cake_details",
+            "patterns": [
+                "apa saja menu kue yang tersedia",
+                "ada kue apa aja",
+                "tolong jelaskan menu kue",
+                "bisa lihat menu kue",
+                "kue apa saja yang dijual",
+                "menu kue hari ini apa saja",
+                "ada rekomendasi kue?",
+                "kue bestseller apa?"
+            ],
+            "responses": [
+                "Menu kue kami: \n1. Kue Coklat (S/M/L)\n2. Kue Vanilla (S/M/L)\n3. Kue Strawberry (S/M/L)",
+                "Kami menyediakan berbagai kue: coklat, vanilla, dan strawberry dalam ukuran S, M, dan L"
+            ]
+        },
+        {
+            "tag": "price_inquiry",
+            "patterns": [
+                "berapa harga kue",
+                "harga kue coklat berapa",
+                "kue vanilla harganya",
+                "daftar harga kue",
+                "kue ukuran s berapa",
+                "harga kue size m",
+                "kue l harganya berapa"
+            ],
+            "responses": [
+                "Harga kue kami:\nUkuran S: Rp150.000\nUkuran M: Rp250.000\nUkuran L: Rp350.000"
+            ]
+        },
+        {
+            "tag": "confirmation",
+            "patterns": [
+                "iya benar",
+                "betul",
+                "ok",
+                "oke",
+                "setuju",
+                "ya",
+                "lanjutkan"
+            ],
+            "responses": [
+                "Baik, pesanan akan saya proses. Mohon konfirmasi alamat pengiriman.",
+                "Oke, selanjutnya mohon berikan alamat pengiriman Anda."
+            ]
         }
     ]
 }

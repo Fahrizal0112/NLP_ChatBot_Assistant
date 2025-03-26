@@ -3,6 +3,7 @@ from nltk.corpus import stopwords
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 import numpy as np
 from typing import Dict, List, Tuple
+from fuzzywuzzy import fuzz
 
 class IntentClassifier:
     def __init__(self):
@@ -45,29 +46,56 @@ class IntentClassifier:
         return best_intent, best_score
         
     def _calculate_similarity(self, tokens1: List[str], tokens2: List[str]) -> float:
-        common_words = set(tokens1) & set(tokens2)
-        return len(common_words) / max(len(tokens1), len(tokens2))
+        text1 = " ".join(tokens1)
+        text2 = " ".join(tokens2)
+        
+        ratio = fuzz.ratio(text1, text2) / 100
+        partial_ratio = fuzz.partial_ratio(text1, text2) / 100
+        token_sort_ratio = fuzz.token_sort_ratio(text1, text2) / 100
+        
+        return max(ratio, partial_ratio, token_sort_ratio)
 
     def extract_entities(self, text: str) -> Dict:
         tokens = self.preprocess_text(text)
         entities = {
             "size": None,
             "flavor": None,
-            "quantity": None
+            "quantity": None,
+            "price_range": None
         }
         
-        size_patterns = ["kecil", "sedang", "besar", "s", "m", "l"]
-        flavor_patterns = ["coklat", "vanilla", "strawberry"]
+        size_patterns = {
+            "s": "small",
+            "m": "medium",
+            "l": "large",
+            "kecil": "small",
+            "sedang": "medium",
+            "besar": "large"
+        }
         
-        for token in tokens:
-            if token in flavor_patterns:
-                entities["flavor"] = token
-            if token in size_patterns:
-                entities["size"] = token
-            try:
-                num = int(token)
-                entities["quantity"] = str(num)
-            except ValueError:
-                continue
+        flavor_patterns = {
+            "coklat": "chocolate",
+            "vanilla": "vanilla",
+            "vanila": "vanilla",
+            "stroberi": "strawberry",
+            "strawberry": "strawberry"
+        }
+        
+        words = text.lower().split()
+        for i, word in enumerate(words):
+            if word in flavor_patterns:
+                entities["flavor"] = flavor_patterns[word]
             
+            if word in size_patterns:
+                entities["size"] = size_patterns[word]
+            
+            try:
+                num = int(word)
+                if num > 0:
+                    entities["quantity"] = num
+            except ValueError:
+                numeric_words = {"satu": 1, "dua": 2, "tiga": 3, "empat": 4, "lima": 5}
+                if word in numeric_words:
+                    entities["quantity"] = numeric_words[word]
+                
         return entities
