@@ -67,23 +67,6 @@ cp .env.example .env
 python src/run.py
 ```
 
-## Struktur Proyek
-src/
-├── config/
-│ ├── config.py # Konfigurasi aplikasi
-│ └── database.py # Konfigurasi database
-├── data/
-│ └── training_data.json # Data training untuk NLP
-├── models/
-│ ├── database.py # Model database
-│ └── intent_model.py # Model NLP
-├── utils/
-│ ├── input_validator.py # Validasi input
-│ └── response_generator.py # Generator respons
-├── main.py # Logic utama aplikasi
-└── run.py # Entry point aplikasi
-
-
 ## Penggunaan
 
 Chatbot dapat memahami berbagai jenis pertanyaan dan permintaan, termasuk:
