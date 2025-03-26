@@ -5,8 +5,16 @@
             "patterns": [
                 "halo",
                 "hai",
+                "hi",
+                "hallo",
+                "hello",
                 "selamat pagi",
-                "permisi"
+                "selamat siang",
+                "selamat sore",
+                "selamat malam",
+                "permisi",
+                "assalamualaikum",
+                "salam"
             ],
             "responses": [
                 "Halo! Selamat datang di Toko Kue kami!",
@@ -23,6 +31,30 @@
             "responses": [
                 "Tentu! Kue apa yang ingin Anda pesan?",
                 "Silakan pilih kue dari menu kami"
+            ]
+        },
+        {
+            "tag": "cake_flavor",
+            "patterns": [
+                "saya mau kue rasa coklat",
+                "ada kue vanilla?",
+                "kue rasa strawberry",
+                "rasa apa saja yang tersedia"
+            ],
+            "responses": [
+                "Kami memiliki rasa coklat, vanilla, dan strawberry. Rasa mana yang Anda inginkan?",
+                "Silakan pilih rasa: coklat, vanilla, atau strawberry"
+            ]
+        },
+        {
+            "tag": "cake_size",
+            "patterns": [
+                "ukuran kue berapa",
+                "ada ukuran apa saja",
+                "mau kue ukuran besar"
+            ],
+            "responses": [
+                "Kami memiliki ukuran S (15cm), M (20cm), dan L (25cm). Ukuran mana yang Anda inginkan?"
             ]
         }
     ]

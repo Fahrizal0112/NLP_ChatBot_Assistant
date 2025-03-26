@@ -2,7 +2,7 @@ class ChatbotConfig:
     TRAINING_DATA_PATH = "src/data/training_data.json"
     RESPONSES_PATH = "src/data/responses.json"
     
-    CONFIDENCE_THRESHOLD = 0.7
+    CONFIDENCE_THRESHOLD = 0.3
     
     SUPPORTED_INTENTS = [
         "greeting",
