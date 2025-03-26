@@ -100,7 +100,10 @@ Ketik 'setuju' untuk konfirmasi pesanan
             'large': 350000,
             's': 150000,
             'm': 250000,
-            'l': 350000
+            'l': 350000,
+            'kecil': 150000,
+            'sedang': 250000,
+            'besar': 350000
         }
         order = self.conversation_state["current_order"]
         size = order.get('size', '').lower()

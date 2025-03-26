@@ -104,6 +104,45 @@
                 "Baik, pesanan akan saya proses. Mohon konfirmasi alamat pengiriman.",
                 "Oke, selanjutnya mohon berikan alamat pengiriman Anda."
             ]
+        },
+        {
+            "tag": "payment_method",
+            "patterns": [
+                "cara bayarnya gimana",
+                "metode pembayaran",
+                "bisa bayar pakai apa",
+                "pembayaran lewat apa",
+                "transfer atau tunai"
+            ],
+            "responses": [
+                "Kami menerima pembayaran via transfer bank (BCA/Mandiri/BNI) atau tunai saat pengambilan."
+            ]
+        },
+        {
+            "tag": "delivery_info",
+            "patterns": [
+                "bisa diantar",
+                "ada pengiriman",
+                "biaya ongkir",
+                "berapa ongkos kirim",
+                "bisa delivery"
+            ],
+            "responses": [
+                "Kami menyediakan layanan pengiriman dengan biaya tergantung jarak. Mohon berikan alamat lengkap Anda."
+            ]
+        },
+        {
+            "tag": "custom_cake",
+            "patterns": [
+                "bisa request gambar",
+                "mau kue custom",
+                "bisa pesan kue khusus",
+                "kue dengan tulisan",
+                "desain kue sendiri"
+            ],
+            "responses": [
+                "Ya, kami menerima pesanan kue custom. Mohon berikan detail desain yang Anda inginkan."
+            ]
         }
     ]
 }
