@@ -1,0 +1,29 @@
+{
+    "intents": [
+        {
+            "tag": "greeting",
+            "patterns": [
+                "halo",
+                "hai",
+                "selamat pagi",
+                "permisi"
+            ],
+            "responses": [
+                "Halo! Selamat datang di Toko Kue kami!",
+                "Hai! Ada yang bisa kami bantu?"
+            ]
+        },
+        {
+            "tag": "order_cake",
+            "patterns": [
+                "saya mau pesan kue",
+                "bisa pesan kue?",
+                "mau beli kue"
+            ],
+            "responses": [
+                "Tentu! Kue apa yang ingin Anda pesan?",
+                "Silakan pilih kue dari menu kami"
+            ]
+        }
+    ]
+}
